@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, TextInput, View, StyleSheet } from 'react-native';
+import firebase from 'firebase';
 
 import FormRow from '../components/FormRow';
 
@@ -11,6 +12,20 @@ export default class LoginScreen extends Component {
             email: '',
             password: ''
         };
+    }
+
+    componentDidMount() {
+        var firebaseConfig = {
+            apiKey: 'AIzaSyC3hNFUx0qNpCcA3E7Rc6OGS-jHNPRi_Z4',
+            authDomain: 'minhasseries-425d6.firebaseapp.com',
+            databaseURL: 'https://minhasseries-425d6.firebaseio.com',
+            projectId: 'minhasseries-425d6',
+            storageBucket: '',
+            messagingSenderId: '253926677764',
+            appId: '1:253926677764:web:cdae3929a5e9d778288451'
+        };
+
+        firebase.initializeApp(firebaseConfig);
     }
 
     onChangeHandler(field, value) {
