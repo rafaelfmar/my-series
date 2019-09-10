@@ -1,12 +1,13 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 
-const App = () => {
-    return (
-        <View>
-            <Text>Hello React</Text>
-        </View>
-    );
-};
+import LoginScreen from './src/pages/LoginScreen';
 
-export default App;
+const AppNavigator = createStackNavigator({
+    'Login': {
+        screen: LoginScreen
+    }
+});
+
+const AppContainer = createAppContainer(AppNavigator);
+
+export default AppContainer;
